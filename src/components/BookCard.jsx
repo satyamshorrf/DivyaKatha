@@ -1,13 +1,46 @@
 import React, { useRef, useState, useEffect } from "react";
 import HTMLFlipBook from "react-pageflip";
-import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react"; // Import the Play and Stop icons from lucide-react
+import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
+
+const FlowerCorners = ({ children }) => (
+  <div className="relative w-full h-full">
+    <div className="absolute top-0 left-0 w-10 h-10">
+      <img
+        src="/imgs/l_t_f.png"
+        alt="flower corner"
+        className="w-full h-full object-contain"
+      />
+    </div>
+    <div className="absolute top-0 right-0 w-10 h-10">
+      <img
+        src="/imgs/r_t_f.png"
+        alt="flower corner"
+        className="w-full h-full object-contain"
+      />
+    </div>
+    <div className="absolute bottom-0 left-0 w-10 h-10">
+      <img
+        src="/imgs/l_b_f.png"
+        alt="flower corner"
+        className="w-full h-full object-contain"
+      />
+    </div>
+    <div className="absolute bottom-0 right-0 w-10 h-10">
+      <img
+        src="/imgs/r_b_f.png"
+        alt="flower corner"
+        className="w-full h-full object-contain"
+      />
+    </div>
+    {children}
+  </div>
+);
 
 const pages = [
   {
     type: "cover",
     content: (
       <div className="page-cover w-full h-full ">
-        {/* <h1 className="text-4xl font-bold text-white">Bhagavad Gita</h1> */}
         <img
           src="/imgs/g_c.jpeg"
           alt="Cover"
@@ -18,43 +51,73 @@ const pages = [
   },
   {
     type: "text",
-    content: <div className="page-content "></div>,
-  },
+    content: (
+      <div className="page-content h-full p-6 text-center ">
+        <h3 className="text-xs text-black mb-2">
+          ।। श्रीश्रीगुरु-गौराङ्गौ जयतः ।।
+        </h3>
 
+        <h3 className="text-xs font-semibold text-neutral-800 mb-2 ">
+          श्रीमत्कृष्णद्वैपायन-वेदव्यास द्वारा रचित
+        </h3>
+
+        <h3 className="text-4xl font-bold text-black mb-3">श्रीमद्भगवद्गीता</h3>
+
+        <h3 className="text-sm font-medium text-neutral-700 mb-2 ">
+          श्रीगौड़ीयवैष्णवाचार्य-मुकुटमणि श्रीमद्विश्वनाथ चक्रवर्ती ठाकुर विरचित
+          सारार्थवर्षिणी टीकासहित
+        </h3>
+
+        <h3 className="text-sm font-medium text-neutral-700 mb-2">
+          श्रीगौड़ीय वेदान्त समिति एवं तदन्तर्गत भारतव्यापी श्रीगौड़ीय मठोंके
+          प्रतिष्ठाता, श्रीकृष्णचैतन्याम्नाय दशमाधस्तनवर श्रीगौड़ीयाचार्यकेशरी
+          नित्यलीलाप्रविष्ट ॐ विष्णुपाद अष्टोत्तरशतश्री
+        </h3>
+
+        <h3 className="text-sm font-bold text-black mb-2">
+          श्रीमद्भक्तिप्रज्ञान केशव गोस्वामी महाराजजीके अनुगृहीत
+        </h3>
+
+        <h3 className="text-sm font-bold text-black mb-2 ">त्रिदण्डिस्वामी</h3>
+
+        <h3 className="text-sm font-bold text-black mb-2">
+          श्रीश्रीमद्भक्तिवेदान्त नारायण गोस्वामी महाराज
+        </h3>
+
+        <h3 className="text-sm font-medium text-neutral-700 mb-3 ">
+          द्वारा सम्पादित एवं तत्कृत अन्वय, अनुवाद, सारार्थवर्षिणी-भावानुवाद तथा
+          सारार्थवर्षिणी-प्रकाशिका-वृत्तिसहित
+        </h3>
+        <div className="justify-center h-20 w-20 mx-auto mt-8 mb-2">
+          <img src="/imgs/s_w_t.png" alt="flower" />
+        </div>
+      </div>
+    ),
+  },
   {
     type: "content",
     content: (
-      <div className="page-content h-full p-20">
-        <h3 className="text-xl font-bold text-red-700">
-          द्वितीय अध्याय, श्लोक 37
+      <div className="page-content h-full p-20 text-center">
+        <h3 className="text-4xl font-bold text-black mb-4">समर्पण</h3>
+        <h3 className="text-lg font-semibold text-neutral-800 mb-2">
+          श्रीगुरुपादपद्म
         </h3>
-        <h3 className="text-xl font-bold text-red-700">
-          द्वितीय अध्याय, श्लोक 47
+        <h3 className="text-sm font-medium text-neutral-700">
+          श्रीकृष्णचैतन्याम्नाय दशमाधस्तनवर श्रीगौड़ीयवेदान्ताचार्यकेशरी
         </h3>
-        <h3 className="text-xl font-bold text-red-700">
-        द्वितीय अध्याय, श्लोक 62
+        <h3 className="text-sm font-medium text-neutral-700 mb-2">
+          ॐ विष्णुपाद १०८श्री
         </h3>
-        <h3 className="text-xl font-bold text-red-700">
-        द्वितीय अध्याय, श्लोक 63
+        <h3 className="text-xs font-bold text-black ">
+          श्रीमद्भक्तिप्रज्ञां केशव गोस्वामी महाराजजीके
         </h3>
-        <h3 className="text-xl font-bold text-red-700">
-        तृतीय अध्याय, श्लोक 21
+        <h3 className="text-xs font-bold text-black mb-1">कमलपुष्पेषु</h3>
+        <h3 className="text-sm font-medium text-neutral-700">
+          [आविर्भाव शतवार्षिकीके उपलक्ष्यमें]
         </h3>
-        <h3 className="text-xl font-bold text-red-700">
-        तृतीय अध्याय, श्लोक 23
-        </h3>
-        <h3 className="text-xl font-bold text-red-700">
-        चतुर्थ अध्याय, श्लोक 7
-        </h3>
-        <h3 className="text-xl font-bold text-red-700">
-        चतुर्थ अध्याय, श्लोक 8
-        </h3>
-        <h3 className="text-xl font-bold text-red-700">
-        चतुर्थ अध्याय, श्लोक 39
-        </h3>
-        <h3 className="text-xl font-bold text-red-700">
-        चतुर्थ अध्याय, श्लोक 7
-        </h3>
+        <div className="justify-center h-20 w-20 mx-auto mt-8 mb-2">
+          <img src="/imgs/g_f_f.png" alt="flower" />
+        </div>
       </div>
     ),
   },
@@ -416,47 +479,58 @@ const pages = [
   {
     type: "text",
     content: (
-      <div className="page-content">
-        <h2 className="text-lg font-bold text-red-700">End Book</h2>
-        <p className="text-sm text-fuchsia-800">
-          The Gita offers profound teachings on duty, righteousness, and
-          spiritual wisdom.
+      <div className="page-content p-[22px] bg-white text-center">
+        <h2 className="text-4xl font-bold text-red-700 mt-3">
+          श्रीमद्भगवद्गीता
+        </h2>
+        <p className="text-lg leading-relaxed text-gray-700 italic text-justify mt-4">
+          धर्मक्षेत्रे कुरुक्षेत्रे — युद्धभूमौ अर्जुनस्य विषादे श्रीकृष्णेन
+          प्रदत्तं दिव्योपदेशरूपं अमृतवाक्यम्। कर्तव्यं, धर्मः, भक्ति, ज्ञानं,
+          मोक्षः — एतेषां विषयेषु श्रीकृष्णस्य उपदेशः आत्मविकासाय मार्गदर्शकः।
+          जीवनस्य गूढप्रश्नानां उत्तरार्थं, आत्मज्ञानस्य प्राप्त्यर्थं,
+          भगवद्गीता एकं अमूल्यं ग्रन्थम्। ​यदा यदा हि धर्मस्य ग्लानिर्भवति भारत।
+          अभ्युत्थानमधर्मस्य तदाऽऽत्मानं सृजाम्यहम्॥ श्रीमद्भगवद्गीता —
+          आत्मज्ञानस्य, धर्मस्य च अमूल्यं कोशः।
         </p>
+        <div className="h-20 w-20 mx-auto  mb-9">
+          <img src="/imgs/o_o.png" alt="flower" />
+        </div>
       </div>
     ),
   },
 ];
 
-const BookPreview = () => {
+const GitaBook = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true); // To track audio play/pause state
-  const [audioPosition, setAudioPosition] = useState(0); // Track audio position
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [audioPosition, setAudioPosition] = useState(0);
   const book = useRef();
   const audioRef = useRef();
 
   const backgrounds = [
-    "bg-gradient-to-br from-yellow-100 to-orange-200", // Cover background
-    "bg-gradient-to-br from-blue-100 to-green-200", // Page 1 background
-    "bg-gradient-to-br from-pink-100 to-purple-200", // Page 2 background
-    "bg-gradient-to-br from-teal-100 to-cyan-200", // Page 3 background
-    "bg-gradient-to-br from-indigo-100 to-violet-200", // Page 4 background
+    "bg-gradient-to-br from-yellow-100 to-red-200",
+    "bg-gradient-to-br from-blue-100 to-indigo-200",
+    "bg-gradient-to-br from-green-100 to-emerald-200",
+    "bg-gradient-to-br from-pink-100 to-rose-200",
+    "bg-gradient-to-br from-purple-100 to-fuchsia-200",
+    "bg-gradient-to-br from-orange-100 to-amber-200",
+    "bg-gradient-to-br from-teal-100 to-lime-200",
+    "bg-gradient-to-br from-cyan-100 to-sky-200",
+    "bg-gradient-to-br from-slate-100 to-zinc-200",
+    "bg-gradient-to-br from-neutral-100 to-stone-200",
   ];
 
-  const audioTracks = [
-    "/audio/audio_1.mp3", // Cover audio
-    "/audio/audio_2.mp3", // Page 1 audio
-    "/audio/audio_3.mp3", // Page 2 audio
-    "/audio/audio_4.mp3", // Page 3 audio
-    "/audio/audio_5.mp3", // Page 4 audio
-  ];
+  const audioTracks = ["/audio/audio_1.mp3"];
 
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex);
     if (audioRef.current) {
       audioRef.current.src = audioTracks[pageIndex];
-      audioRef.current.currentTime = audioPosition; // Resume from last position
+      audioRef.current.currentTime = audioPosition;
       if (isPlaying) {
-        audioRef.current.play();
+        audioRef.current
+          .play()
+          .catch((e) => console.error("Audio play failed:", e));
       } else {
         audioRef.current.pause();
       }
@@ -466,38 +540,48 @@ const BookPreview = () => {
   const toggleAudio = () => {
     if (audioRef.current) {
       if (isPlaying) {
-        setAudioPosition(audioRef.current.currentTime); // Save current position before pausing
+        setAudioPosition(audioRef.current.currentTime);
         audioRef.current.pause();
       } else {
-        audioRef.current.play();
+        audioRef.current
+          .play()
+          .catch((e) => console.error("Audio play failed:", e));
       }
       setIsPlaying(!isPlaying);
     }
   };
 
   useEffect(() => {
-    // Auto-start audio on page refresh or load.
     if (audioRef.current) {
       audioRef.current.src = audioTracks[currentPage];
-      audioRef.current.currentTime = audioPosition; // Ensure it starts from the saved position
+      audioRef.current.currentTime = audioPosition;
       if (isPlaying) {
-        audioRef.current.play();
+        audioRef.current
+          .play()
+          .catch((e) => console.error("Audio play failed:", e));
       }
     }
-  }, [currentPage]);
 
-  // Stop all audio if the play state is false
-  useEffect(() => {
-    if (!isPlaying && audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-    }
-  }, [isPlaying]);
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
+  }, [currentPage]);
 
   return (
     <div
-      className={`min-h-screen ${backgrounds[currentPage]} flex items-center justify-center `}
+      className={`min-h-screen ${
+        backgrounds[currentPage % backgrounds.length]
+      } flex items-center justify-center relative`}
     >
+      <button
+        className="absolute left-4 md:left-10 lg:left-20 xl:left-[285px] bottom-4 md:bottom-auto mb-[90px] md:mt-0 border-[3px] border-gray-400 rounded-full bg-white backdrop-blur-lg p-4 shadow-lg z-10"
+        onClick={() => book.current.pageFlip().flipPrev()}
+      >
+        <ChevronLeft size={36} color="gray" />
+      </button>
+
       <HTMLFlipBook
         width={400}
         height={500}
@@ -516,44 +600,34 @@ const BookPreview = () => {
         {pages.map((page, idx) => (
           <div
             key={idx}
-            className="page bg-white border-4 border-yellow-600 rounded-xl  shadow-lg"
+            className="page bg-white border-4 border-yellow-600 rounded-xl shadow-lg"
           >
-            {page.content}
+            <FlowerCorners>{page.content}</FlowerCorners>
           </div>
         ))}
       </HTMLFlipBook>
-      <audio ref={audioRef} preload="auto" />
 
       <button
-        className="absolute bottom-100 right-[14rem]  transform -translate-x-1/2 flex items-center space-x-4 border-[3px] border-gray-400 rounded-full bg-white backdrop-blur-lg p-4 shadow-lg text-black"
+        className="absolute right-4 md:right-10 lg:right-20 xl:right-[285px] bottom-4 md:bottom-auto mb-[90px] md:mt-0 border-[3px] border-gray-400 rounded-full bg-white backdrop-blur-lg p-4 shadow-lg z-10"
         onClick={() => book.current.pageFlip().flipNext()}
       >
         <ChevronRight size={36} color="gray" />
       </button>
+
       <button
-        className="absolute bottom-100 left-[19rem] transform -translate-x-1/2 flex items-center space-x-4 border-[3px] border-gray-400 rounded-full bg-white backdrop-blur-lg p-4 shadow-lg text-black "
-        onClick={() => book.current.pageFlip().flipPrev()}
+        className=" absolute bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:translate-x-0 border-2 border-transparent rounded-full bg-red-500 backdrop-blur-lg p-3 shadow-lg z-10 md:mb-0 mb-[90px]"
+        onClick={toggleAudio}
       >
-        <ChevronLeft size={36} color="gray" />
+        {isPlaying ? (
+          <Pause size={24} color="white" />
+        ) : (
+          <Play size={24} color="white" />
+        )}
       </button>
 
-      {/* Audio Control Button with Icon */}
-      <div className="absolute bottom-4  right-0 transform -translate-x-1/2 flex items-center space-x-4 border-2 border-transparent rounded-full bg-red-500 backdrop-blur-lg p-2 shadow-lg">
-        <button
-          className={`bg-${
-            isPlaying ? "red" : "green"
-          }-500 text-white font-bold py-2 px-4 rounded`}
-          onClick={toggleAudio}
-        >
-          {isPlaying ? (
-            <Pause size={24} color="white" />
-          ) : (
-            <Play size={24} color="white" />
-          )}
-        </button>
-      </div>
+      <audio ref={audioRef} preload="auto" />
     </div>
   );
 };
 
-export default BookPreview;
+export default GitaBook;
