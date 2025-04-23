@@ -1,5 +1,7 @@
 {
   "name": "divyakatha",
+  "description": "A web application for Divya Katha, a platform for sharing and exploring stories.",
+  "author": "NeuroAgent Team",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,26 +12,29 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@heroicons/react": "^2.2.0",
-    "framer-motion": "^12.7.4",
-    "lucide-react": "^0.503.0",
+    "@google/model-viewer": "^4.1.0",
+    "@react-three/drei": "^10.0.6",
+    "@react-three/fiber": "^9.1.2",
+    "framer-motion": "^12.7.3",
+    "lucide-react": "^0.487.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-pageflip": "^2.0.3",
-    "react-router-dom": "^7.5.1"
+    "react-router-dom": "^7.5.0",
+    "three": "^0.175.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.22.0",
+    "@eslint/js": "^9.21.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.22.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
+    "globals": "^15.15.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
-    "vite": "^6.3.1"
+    "vite": "^6.2.0"
   }
 }

@@ -15,6 +15,10 @@ import TreatayugaStoryPage from "./pages/TreatayugaStoryPage";
 import DvaparayugaStoryPage from "./pages/DvaparayugaStoryPage";
 import KaliyugaStoryPage from "./pages/KaliyugaStoryPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import Explorer from "./pages/ExplorerPage";
+import ExplorerPage from "./pages/ExplorerPage";
+
+
 
 function App() {
   return (
@@ -108,6 +112,10 @@ function App() {
           <Route
             path="/kaliyuga/story5"
             element={<KaliyugaStoryPage storyId="story5" />}
+          />
+          <Route
+            path="/explores"
+            element={<ExplorerPage />}
           />
 
           <Route path="*" element={<NotFoundPage />} />
