@@ -1,0 +1,51 @@
+// tailwind.config.js
+module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        saffron: '#FF9933',       // Sacred color, used in flags and robes
+        vermilion: '#E34234',     // Sindoor/Kumkum red
+        lotusPink: '#F4C2C2',     // Represents purity, devotion
+        peacockBlue: '#1A4C8B',   // Symbol of Lord Krishna's feather
+        templeGold: '#D4AF37',    // Gold ornaments and temples
+        forestGreen: '#228B22',   // Nature, harmony
+        deepIndigo: '#4B0082',    // Spiritual depth
+        turmericYellow: '#FFD700', // Abundance, celebration
+        sandalwood: '#D2B48C',    // Calmness, pooja ingredients
+        ashwagandhaGray: '#B0A99F' // Earthy wisdom
+      },
+    },
+  },
+}
+
+
+
+<div className="bg-saffron text-white p-4 rounded-lg shadow-lg">
+  <h1 className="text-templeGold text-2xl font-bold">शुभारंभ (Shubharambh)</h1>
+  <p className="text-sandalwood mt-2">Start your spiritual journey with divine energy.</p>
+</div>
+
+
+text-[#FF9933]     → Saffron (Sacred, spiritual)
+text-[#E34234]     → Vermilion Red (Sindoor, Kumkum)
+text-[#F4C2C2]     → Lotus Pink (Devotion, purity)
+text-[#1A4C8B]     → Peacock Blue (Lord Krishna’s feather)
+text-[#D4AF37]     → Temple Gold (Divine richness)
+text-[#228B22]     → Forest Green (Harmony, nature)
+text-[#4B0082]     → Deep Indigo (Mysticism, wisdom)
+text-[#FFD700]     → Turmeric Yellow (Celebration, purity)
+text-[#D2B48C]     → Sandalwood (Calmness, tradition)
+text-[#B0A99F]     → Ashwagandha Gray (Earthy, wise)
+
+
+
+bg-[#FF9933]
+bg-[#E34234]
+bg-[#F4C2C2]
+bg-[#1A4C8B]
+bg-[#D4AF37]
+bg-[#228B22]
+bg-[#4B0082]
+bg-[#FFD700]
+bg-[#D2B48C]
+bg-[#B0A99F]

@@ -18,15 +18,14 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-gray-800 text-white z-50 shadow-md">
+    <header className="fixed top-0 left-0 w-full bg-[#242d59] text-white z-50 shadow-md">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo & Title */}
         <Link
           to="/"
-          className="flex items-center gap-2 text-cyan-300 text-2xl font-bold"
+          className="flex items-center gap-2 text-[#FF9933] text-2xl font-bold"
         >
           <img
-            src="/imgs/av_1.jpg"
+            src="/imgs/logo.png"
             alt="DivyaKatha Logo"
             className="w-10 h-10"
           />
@@ -39,8 +38,8 @@ const Navbar = () => {
             to="/"
             className={({ isActive }) =>
               `flex items-center space-x-2 font-small transition ${
-                isActive ? "text-purple-400" : "text-white"
-              } hover:text-cyan-400`
+                isActive ? "text-[#FF9933]" : "text-white"
+              } hover:text-[#ffd7a4]`
             }
           >
             <Home size={18} />
@@ -51,8 +50,8 @@ const Navbar = () => {
             to="/satyayuga"
             className={({ isActive }) =>
               `flex items-center space-x-2 font-small transition ${
-                isActive ? "text-purple-400" : "text-white"
-              } hover:text-cyan-400`
+                isActive ? "text-[#FF9933]" : "text-white"
+              } hover:text-[#ffd7a4]`
             }
           >
             <Bird size={18} />
@@ -63,8 +62,8 @@ const Navbar = () => {
             to="/dvaparayuga"
             className={({ isActive }) =>
               `flex items-center space-x-2 font-small transition ${
-                isActive ? "text-purple-400" : "text-white"
-              } hover:text-cyan-400`
+                isActive ? "text-[#FF9933]" : "text-white"
+              } hover:text-[#ffd7a4]`
             }
           >
             <Disc size={18} />
@@ -75,8 +74,8 @@ const Navbar = () => {
             to="/tretayuga"
             className={({ isActive }) =>
               `flex items-center space-x-2 font-small transition ${
-                isActive ? "text-purple-400" : "text-white"
-              } hover:text-cyan-400`
+                isActive ? "text-[#FF9933]" : "text-white"
+              } hover:text-[#ffd7a4]`
             }
           >
             <Swords size={18} />
@@ -86,8 +85,8 @@ const Navbar = () => {
             to="/kaliyuga"
             className={({ isActive }) =>
               `flex items-center space-x-2 font-small transition ${
-                isActive ? "text-purple-400" : "text-white"
-              } hover:text-cyan-400`
+                isActive ? "text-[#FF9933]" : "text-white"
+              } hover:text-[#ffd7a4]`
             }
           >
             <Compass size={18} />
@@ -95,7 +94,6 @@ const Navbar = () => {
           </NavLink>
         </nav>
 
-        {/* Icons (hidden on mobile) */}
         <div className=" md:flex ml-20">
           <AudioButton />
         </div>
@@ -112,35 +110,38 @@ const Navbar = () => {
       {/* Mobile Menu Items */}
       {menuOpen && (
         <div
-          className="md:hidden absolute top-[5rem] bg-gray-700 px-4 py-3 text-right rounded-lg shadow-lg w-30 space-y-2"
-          style={{ right: "210px" }} // 20px (1rem) - 5px = 15px
+          className="md:hidden absolute top-[5rem] bg-[#242d59] px-4 py-3 text-right rounded-lg shadow-lg w-30 space-y-2"
+          style={{ right: "210px" }}
         >
-          <Link to="/" className="block text-white hover:text-cyan-400">
+          <Link to="/" className="block text-white hover:text-[#ffd7a4]">
             HOME
           </Link>
           <hr className="border-gray-500" />
           <Link
             to="/satyayuga"
-            className="block text-white hover:text-cyan-400"
+            className="block text-white hover:text-[#ffd7a4]"
           >
             SATYAYUGA
           </Link>
           <hr className="border-gray-500" />
           <Link
             to="/dvaparayuga"
-            className="block text-white hover:text-cyan-400"
+            className="block text-white hover:text-[#ffd7a4]"
           >
             DVAPARAYUGA
           </Link>
           <hr className="border-gray-500" />
           <Link
             to="/tretayuga"
-            className="block text-white hover:text-cyan-400"
+            className="block text-white hover:text-[#ffd7a4]"
           >
             TREATAYUG
           </Link>
           <hr className="border-gray-500" />
-          <Link to="/kaliyuga" className="block text-white hover:text-cyan-400">
+          <Link
+            to="/kaliyuga"
+            className="block text-white hover:text-[#ffd7a4]"
+          >
             KALIYUGA
           </Link>
           <hr className="border-gray-500" />
