@@ -59,6 +59,18 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
+            to="/tretayuga"
+            className={({ isActive }) =>
+              `flex items-center space-x-2 font-small transition ${
+                isActive ? "text-[#FF9933]" : "text-white"
+              } hover:text-[#ffd7a4]`
+            }
+          >
+            <Swords size={18} />
+            <span> TRETAYUGA</span>
+          </NavLink>
+
+          <NavLink
             to="/dvaparayuga"
             className={({ isActive }) =>
               `flex items-center space-x-2 font-small transition ${
@@ -70,17 +82,6 @@ const Navbar = () => {
             <span>DVAPARAYUGA</span>
           </NavLink>
 
-          <NavLink
-            to="/tretayuga"
-            className={({ isActive }) =>
-              `flex items-center space-x-2 font-small transition ${
-                isActive ? "text-[#FF9933]" : "text-white"
-              } hover:text-[#ffd7a4]`
-            }
-          >
-            <Swords size={18} />
-            <span> TRETAYUGA</span>
-          </NavLink>
           <NavLink
             to="/kaliyuga"
             className={({ isActive }) =>
@@ -122,7 +123,7 @@ const Navbar = () => {
       {menuOpen && (
         <div
           className="md:hidden absolute top-[5rem] bg-[#242d59] px-4 py-3 text-right rounded-lg shadow-lg w-30 space-y-2"
-          style={{ right: "210px" }}
+          style={{ right: "2rem" }}
         >
           <Link to="/" className="block text-white hover:text-[#ffd7a4]">
             HOME
@@ -136,19 +137,20 @@ const Navbar = () => {
           </Link>
           <hr className="border-gray-500" />
           <Link
-            to="/dvaparayuga"
-            className="block text-white hover:text-[#ffd7a4]"
-          >
-            DVAPARAYUGA
-          </Link>
-          <hr className="border-gray-500" />
-          <Link
             to="/tretayuga"
             className="block text-white hover:text-[#ffd7a4]"
           >
             TREATAYUG
           </Link>
           <hr className="border-gray-500" />
+          <Link
+            to="/dvaparayuga"
+            className="block text-white hover:text-[#ffd7a4]"
+          >
+            DVAPARAYUGA
+          </Link>
+          <hr className="border-gray-500" />
+
           <Link
             to="/kaliyuga"
             className="block text-white hover:text-[#ffd7a4]"

@@ -1,5 +1,5 @@
 import React from "react";
-import BookCard from "../components/BookCard.jsx";
+import BookCard from "../components/GitaBook.jsx";
 
 const DvaparayugaPage = () => {
   return (

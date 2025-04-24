@@ -1,6 +1,14 @@
 import React, { useRef, useState, useEffect } from "react";
 import HTMLFlipBook from "react-pageflip";
-import { Play, Pause, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Play,
+  Pause,
+  ChevronLeft,
+  ChevronRight,
+  VolumeX,
+  Volume2,
+  VolumeOff,
+} from "lucide-react";
 
 const FlowerCorners = ({ children }) => (
   <div className="relative w-full h-full">
@@ -458,10 +466,11 @@ const pages = [
   },
 ];
 
+
 const RamayanBook = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [audioPosition, setAudioPosition] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [showPrevButton, setShowPrevButton] = useState(false);
   const book = useRef();
   const audioRef = useRef();
 
@@ -478,27 +487,15 @@ const RamayanBook = () => {
     "bg-gradient-to-br from-neutral-100 to-stone-200",
   ];
 
-  const audioTracks = ["/audio/audio_1.mp3"];
-
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex);
-    if (audioRef.current) {
-      audioRef.current.src = audioTracks[pageIndex];
-      audioRef.current.currentTime = audioPosition;
-      if (isPlaying) {
-        audioRef.current
-          .play()
-          .catch((e) => console.error("Audio play failed:", e));
-      } else {
-        audioRef.current.pause();
-      }
-    }
+
+    setShowPrevButton(pageIndex > 0);
   };
 
   const toggleAudio = () => {
     if (audioRef.current) {
       if (isPlaying) {
-        setAudioPosition(audioRef.current.currentTime);
         audioRef.current.pause();
       } else {
         audioRef.current
@@ -510,22 +507,12 @@ const RamayanBook = () => {
   };
 
   useEffect(() => {
+ 
     if (audioRef.current) {
-      audioRef.current.src = audioTracks[currentPage];
-      audioRef.current.currentTime = audioPosition;
-      if (isPlaying) {
-        audioRef.current
-          .play()
-          .catch((e) => console.error("Audio play failed:", e));
-      }
+      audioRef.current.src = "/audio/Ramayan2WhatsApp Audio 2025-04-25 at 04.38.57_abe4fa7e.mp3";
+      audioRef.current.preload = "auto";
     }
-
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
-    };
-  }, [currentPage]);
+  }, []);
 
   return (
     <div
@@ -533,12 +520,15 @@ const RamayanBook = () => {
         backgrounds[currentPage % backgrounds.length]
       } flex items-center justify-center relative`}
     >
-      <button
-        className="absolute left-4 md:left-10 lg:left-20 xl:left-[285px] bottom-4 md:bottom-auto mb-[90px] md:mt-0 border-[3px] border-gray-400 rounded-full bg-white backdrop-blur-lg p-4 shadow-lg z-10"
-        onClick={() => book.current.pageFlip().flipPrev()}
-      >
-        <ChevronLeft size={36} color="gray" />
-      </button>
+   
+      {showPrevButton && (
+        <button
+          className="absolute left-4 md:left-10 lg:left-20 xl:left-[285px] bottom-4 md:bottom-auto mb-[90px] md:mt-0 border-[3px] border-gray-400 rounded-full bg-white backdrop-blur-lg p-4 shadow-lg z-10"
+          onClick={() => book.current.pageFlip().flipPrev()}
+        >
+          <ChevronLeft size={36} color="gray" />
+        </button>
+      )}
 
       <HTMLFlipBook
         width={400}
@@ -565,25 +555,28 @@ const RamayanBook = () => {
         ))}
       </HTMLFlipBook>
 
-      <button
-        className="absolute right-4 md:right-10 lg:right-20 xl:right-[285px] bottom-4 md:bottom-auto mb-[90px] md:mt-0 border-[3px] border-gray-400 rounded-full bg-white backdrop-blur-lg p-4 shadow-lg z-10"
-        onClick={() => book.current.pageFlip().flipNext()}
-      >
-        <ChevronRight size={36} color="gray" />
-      </button>
+  
+      {currentPage < pages.length - 1 && (
+        <button
+          className="absolute right-4 md:right-10 lg:right-20 xl:right-[285px] bottom-4 md:bottom-auto mb-[90px] md:mt-0 border-[3px] border-gray-400 rounded-full bg-white backdrop-blur-lg p-4 shadow-lg z-10"
+          onClick={() => book.current.pageFlip().flipNext()}
+        >
+          <ChevronRight size={36} color="gray" />
+        </button>
+      )}
 
       <button
-        className=" absolute bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:translate-x-0 border-2 border-transparent rounded-full bg-red-500 backdrop-blur-lg p-3 shadow-lg z-10 md:mb-0 mb-[90px]"
+        className="absolute top-4 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:translate-x-0 border-2 border-transparent rounded-full bg-red-500 backdrop-blur-lg p-3 shadow-lg z-10 md:mb-0 mb-[90px]"
         onClick={toggleAudio}
       >
         {isPlaying ? (
-          <Pause size={24} color="white" />
+          <Volume2 size={24} color="white" />
         ) : (
-          <Play size={24} color="white" />
+          <VolumeOff size={24} color="white" />
         )}
       </button>
 
-      <audio ref={audioRef} preload="auto" />
+      <audio ref={audioRef} loop />
     </div>
   );
 };
