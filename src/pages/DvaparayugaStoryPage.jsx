@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import {  AnimatePresence } from 'framer-motion';
 import { Play, Pause } from 'lucide-react';
 
 const DvaparayugaStoryPage = ({ storyId }) => {
@@ -55,7 +55,7 @@ const DvaparayugaStoryPage = ({ storyId }) => {
     }, 5000);
 
     return () => clearInterval(intervalRef.current);
-  }, []);
+  }, [bgImages.length]);
 
   const togglePlayPause = () => {
     if (!audioRef.current) return;
