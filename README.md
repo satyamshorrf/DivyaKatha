@@ -1,12 +1,81 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# DivyaKatha - Immersive Hindu Mythology Experience
 
-Currently, two official plugins are available:
+## 🌌 Introduction  
+An interactive digital platform exploring timeless Hindu scriptures across the four Yugas, blending traditional wisdom with modern web technologies.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
 
-## Expanding the ESLint configuration
+### 📖 Story Exploration
+- **Yuga-based Classification**: Navigate through Satya, Treta, Dvapara, and Kali Yuga stories
+- **Immersive Storytelling**: Rich multimedia narratives with authentic scriptures
+- **Thematic Discovery**: Find stories by spiritual teachings or deities
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🛠️ Technical Excellence
+- **3D Visualizations**: Sacred symbols and temples with Three.js
+- **Smooth Transitions**: Framer Motion animations  
+- **Responsive Design**: Optimized for all devices
+- **Performance**: Vite-powered build system
+- **Custom Themes**: Adjustable color schemes
+
+## 🚀 Installation
+
+### Prerequisites
+- Node.js v18+
+- npm v9+ or yarn v1.22+
+
+### Setup Guide
+```bash
+# Clone repository
+git clone https://github.com/[your-username]/divyakatha.git
+cd divyakatha
+
+# Install dependencies
+npm install --force
+
+# Start development server
+npm run dev
+```
+Access at: `http://localhost:5173`
+
+## 🏛️ Architecture
+
+### Core Stack
+| Component          | Technology           |
+|--------------------|----------------------|
+| Frontend Framework | React 18+            |
+| Styling            | Tailwind CSS         |
+| 3D Rendering       | Three.js + R3F       |
+| Animations         | Framer Motion        |
+| Build Tool         | Vite                 |
+
+### Supporting Libraries
+- React Router DOM (Navigation)
+- Lucide React (Icons)
+- Axios (API calls)
+
+## 🌟 Future Roadmap
+
+### Upcoming Features
+- [ ] Interactive character genealogies
+- [ ] Multilingual support (Sanskrit/Hindi/English)
+- [ ] Augmented Reality integration
+- [ ] User-contributed annotations
+
+### Enhancement Plan
+- [ ] Performance optimization
+- [ ] Progressive Web App support
+- [ ] Accessibility improvements
+
+
+## 🤝 Contributing
+
+## ✨ NeuroAgent Team
+
+| Devotee          | Role                | GitHub Profile                      |
+|------------------|---------------------|-------------------------------------|
+| Satyam Kumar     | Project Lead (Developer)   | [@satyamshorrf](https://github.com/satyamshorrf) |
+| Rajesh Kumar     | Developer        | [@sigmarajesh](https://github.com/sigmarajesh)  |
+| Toni Kumar       | Developer         | [@tony-624](https://github.com/tony-624)     |
+| Sandeep Kumar    | Developer    | [@sandeepkrpoddar](https://github.com/sandeepkrpoddar) |
+| Pratik Kumar     | Developer         | [@Vicky7463](https://github.com/Vicky7463)    |
