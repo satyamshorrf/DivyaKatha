@@ -13,6 +13,7 @@ const ExplorerPage = () => {
         <p className="text-lg text-white">Discover the stories and legends of each Yuga.</p>
         <p className="text-lg text-white">Discover the stories and legends of each Yuga.</p>
         <p className="text-lg text-white">Discover the stories and legends of each Yuga.</p>
+        <p className="text-lg text-white">Discover the stories and legends of each Yuga.</p>
         
       </div>
    
