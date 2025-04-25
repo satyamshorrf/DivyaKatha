@@ -93,17 +93,7 @@ const Navbar = () => {
             <Compass size={18} />
             <span>KALIYUGA</span>
           </NavLink>
-          <NavLink
-            to="/explores"
-            className={({ isActive }) =>
-              `flex items-center space-x-2 font-small transition ${
-                isActive ? "text-[#FF9933]" : "text-white"
-              } hover:text-[#ffd7a4]`
-            }
-          >
-            <Compass size={18} />
-            <span>EXPLORES</span>
-          </NavLink>
+      
         </nav>
 
         <div className=" md:flex ml-20">

@@ -1,9 +1,11 @@
 import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+
+import IntroScreen from "./components/IntroScreen";
 
 import HomePage from "./pages/HomePage";
 import SatayugaPage from "./pages/SatyayugaPage";
@@ -15,7 +17,7 @@ import TreatayugaStoryPage from "./pages/TreatayugaStoryPage";
 import DvaparayugaStoryPage from "./pages/DvaparayugaStoryPage";
 
 import NotFoundPage from "./pages/NotFoundPage";
-import ExplorerPage from "./pages/ExplorerPage";
+
 
 const pageVariants = {
   initial: {
@@ -42,6 +44,13 @@ const pageTransition = {
 };
 
 function App() {
+
+  const [started, setStarted] = useState(false);
+
+  if (!started) {
+    // ❌ Don't render Navbar, Footer, or any other page during splash
+    return <IntroScreen onStart={() => setStarted(true)} />;
+  }
   const location = useLocation();
 
   return (
@@ -284,20 +293,7 @@ function App() {
               }
             />
 
-            <Route
-              path="/explores"
-              element={
-                <motion.div
-                  initial="initial"
-                  animate="in"
-                  exit="out"
-                  variants={pageVariants}
-                  transition={pageTransition}
-                >
-                  <ExplorerPage />
-                </motion.div>
-              }
-            />
+      
 
             <Route
               path="*"
@@ -316,7 +312,7 @@ function App() {
           </Routes>
         </AnimatePresence>
       </div>
-      <Footer />
+ 
     </div>
   );
 }
