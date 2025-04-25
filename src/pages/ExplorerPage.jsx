@@ -11,6 +11,8 @@ const ExplorerPage = () => {
       </div>
       <div className="flex justify-center mt-5">
         <p className="text-lg text-white">Discover the stories and legends of each Yuga.</p>
+        <p className="text-lg text-white">Discover the stories and legends of each Yuga.</p>
+        
       </div>
    
       <KedarnathModel />
