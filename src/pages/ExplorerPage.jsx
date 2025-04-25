@@ -131,7 +131,7 @@ export default function AnimatedPages() {
         </div>
       </div>
 
-      {/* Page Indicator */}
+      {/* Page  */}
       <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10 flex space-x-2">
         {pages.map((_, index) => (
           <button
