@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const FlowerCorners = () => (
   <>
     <div className="absolute top-0 left-0 w-10 h-10">
@@ -39,6 +40,7 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-wrap justify-center gap-6 w-full px-4 mt-[70px]">
+
       <div className="flex flex-col items-center w-full sm:w-[300px] lg:w-[300px]">
         <div className="bg-gray-800 rounded-lg shadow-lg w-full h-[450px]">
           <div className="relative bg-[#fdf6e3] text-black rounded-xl p-6 shadow-lg w-full h-full">
