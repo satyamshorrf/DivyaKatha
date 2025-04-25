@@ -12,7 +12,7 @@ const pages = [
   },
   {
     id: 2,
-    bgImage: "url('/imgs/sat_1.jpg')",
+    bgImage: "url('/imgs/sat_2.jpg')",
     music:
       "/audio/S_2WhatsApp Audio 2025-04-25 at 01.23.21_97a8dcdc.dat.unknown",
     content:
@@ -20,7 +20,7 @@ const pages = [
   },
   {
     id: 3,
-    bgImage: "url('/imgs/sat_2.jpg')",
+    bgImage: "url('/imgs/sat_3.jpg')",
     music:
       "/audio/S_3WhatsApp Audio 2025-04-25 at 01.25.45_56a9cf63.dat.unknown",
     content:
@@ -28,7 +28,7 @@ const pages = [
   },
   {
     id: 4,
-    bgImage: "url('/imgs/sat_3.jpg')",
+    bgImage: "url('/imgs/sat_4.jpg')",
     music:
       "/audio/S_4WhatsApp Audio 2025-04-25 at 01.30.43_f0705d25.dat.unknown",
     content:
@@ -36,7 +36,7 @@ const pages = [
   },
   {
     id: 5,
-    bgImage: "url('/imgs/sat_4.jpeg')",
+    bgImage: "url('/imgs/sat_5.png')",
     music:
       "/audio/S_5WhatsApp Audio 2025-04-25 at 01.34.18_67a59c42.dat.unknown",
     content:
@@ -44,9 +44,9 @@ const pages = [
   },
   {
     id: 6,
-    bgImage: "url('/imgs/sat_5.jpg')",
+    bgImage: "url('/imgs/sat_6.jpg')",
     music:
-      "/audio/S_6WhatsApp Audio 2025-04-25 at 01.34.18_67a59c42.dat.unknown",
+      "/audio/S_6WhatsApp Audio 2025-04-25 at 01.37.43_844be3f7.dat.unknown",
     content: `यह कहानी सिखाती है:
     जहाँ सच्ची भक्ति होती है, वहाँ भगवान हर बंधन तोड़कर रक्षा करते हैं।
     सतयुग हमें बताता है कि सत्य, तप और धर्म से ही जीवन में सच्चा कल्याण होता है।
