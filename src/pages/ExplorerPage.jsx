@@ -101,7 +101,7 @@ export default function AnimatedPages() {
 
       {/* Content and Controls */}
       <div className="absolute inset-0 flex flex-col items-center justify-end z-10 pb-8 sm:pb-16 md:pb-24 lg:pb-32 px-4">
-        {/* Buttons */}
+
         <div className="mb-4 flex flex-col sm:flex-row gap-3 sm:gap-5 items-center">
           <button
             onClick={prevPage}
