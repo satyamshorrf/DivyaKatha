@@ -146,7 +146,7 @@ export default function AnimatedPages() {
       {/* Audio */}
       <audio ref={audioRef} autoPlay loop>
         <source src={pages[pageIndex].music} type="audio/mpeg" />
-        Your browser does not support the audio element.
+        Your browser does't support the audio element.
       </audio>
     </div>
   );
